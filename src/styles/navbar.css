@@ -1,0 +1,5 @@
+/* Add this to your CSS or in a separate CSS file */
+/* Hide navigation items by default */
+.hide-on-small-screens {
+	display: none;
+}
