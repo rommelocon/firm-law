@@ -1,62 +1,53 @@
-import { Element, Link } from 'react-scroll';
-import backgroundVideo from '../assets/videos/mp4/section-vid.mp4';
+import React from 'react';
+import '../styles/home.css';
+import video from '../assets/videos/mp4/section-vid.mp4';
 
-export default function Home() {
-	const sectionId = [
-		{ text: 'Home', id: 'Home' },
-		{ text: 'Section', id: 'Second' },
-		{ text: 'Section', id: 'Third' },
-		{ text: 'Section', id: 'Forth' },
-	];
-
+function Home() {
 	return (
-		<>
-			<div className='scroll-indicator'>
-				{sectionId.map((section, index) => (
-					<Link
-						key={index}
-						to={section.id}
-						activeClass='active'
-						spy={true}
-						smooth={true}
-						offset={-30}
-						duration={300}
-						className='scroll-indicator-button'
-						data-section={section.id}
-					></Link>
-				))}
-			</div>
+		<div className='section-container'>
+			{/* Inputs*/}
+			<input type='radio' name='item' defaultChecked='checked' id='section1' />
+			<input type='radio' name='item' id='section2' />
+			<input type='radio' name='item' id='section3' />
+			<input type='radio' name='item' id='section4' />
+			{/* Navigation*/}
+			<nav className='nav'>
+				<label className='nav__item' htmlFor='section1' />
+				<label className='nav__item' htmlFor='section2' />
+				<label className='nav__item' htmlFor='section3' />
+				<label className='nav__item' htmlFor='section4' />
+			</nav>
+			{/* Sections*/}
+			<section>
+				<div className='fullscreen-section video-section'>
+					<video
+						autoPlay
+						loop
+						muted
+						className='video-background'
+						src={video}
+						type='video/mp4'
+					></video>
+					<div className='overlay'></div>
 
-			<div className='fullscreen'>
-				<div className='scroll-container'>
-					<Element name='Home' className='scroll-section'>
-						<div className='wrapper'>
-							<div className='background-video-container'>
-								<video autoPlay loop muted className='background-video'>
-									<source src={backgroundVideo} type='video/mp4' />
-								</video>
-								<div className='overlay'></div>
-							</div>
-							<div className='centered-text'>
-								<h1>Lorem ipsum dolor sit amet</h1>
-								<p>Nullam commodo metus ipsum.</p>
-							</div>
-						</div>
-					</Element>
-
-					<Element name='Second' className='scroll-section'>
-						<div className='wrapper'></div>
-					</Element>
-
-					<Element name='Third' className='scroll-section'>
-						<div className='wrapper'></div>
-					</Element>
-
-					<Element name='Forth' className='scroll-section'>
-						<div className='wrapper'></div>
-					</Element>
+					<div className='content centered-text'>
+						<h1></h1>
+					</div>
 				</div>
-			</div>
-		</>
+			</section>
+			<section>
+				<h1>Pure CSS</h1>
+			</section>
+			<section>
+				<h1>Full Screen</h1>
+			</section>
+			<section>
+				<h1>@Ver_Qn</h1>
+			</section>
+			{/* Fix the white space when scrolling two sections at the time*/}
+			<div className='cover' />
+		</div>
 	);
 }
+
+export default Home;

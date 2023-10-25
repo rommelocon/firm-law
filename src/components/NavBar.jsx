@@ -8,7 +8,7 @@ function Navbar() {
 
 	return (
 		<>
-			<div className='fixed top-0 bg-black shadow-md px-4 py-2 z-10 w-full'>
+			<div className='relative top-0 bg-black shadow-md px-4 py-2 z-10 w-full'>
 				<div className='container flex items-center mx-auto justify-between'>
 					<div className='w-1/12 py-4'>
 						<Link to='/'>

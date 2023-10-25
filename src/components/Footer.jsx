@@ -1,7 +1,7 @@
 export default function Footer() {
 	return (
 		<>
-			<div className='fixed w-full bottom-0 bg-black text-white py-5'>
+			<div className='fixed bottom-0 w-full bg-black text-white py-5 z-50'>
 				<div className='container mx-auto'>
 					<div className='ul flex'>
 						<ul className="flex">
